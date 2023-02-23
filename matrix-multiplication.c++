@@ -17,7 +17,7 @@ vector<vector<int>> matrixC;
 
 int rowOfC = 0;
 
-void *multi(void *arg)
+void *operation(void *arg)
 {
     int i = rowOfC;
 
@@ -124,7 +124,7 @@ int main()
     for (int i = 0; i < Number_of_Threads; i++)
     {
         int *point;
-        pthread_create(&threads[i], NULL, multi, (void *)(point));
+        pthread_create(&threads[i], NULL, operation, (void *)(point));
     }
 
     for (int i = 0; i < Number_of_Threads; i++)
